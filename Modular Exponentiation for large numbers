@@ -1,0 +1,21 @@
+'''Implement pow(x, n) % M.
+In other words, for a given value of x, n, and M, find  (xn) % M.'''
+
+
+class Solution:
+    def PowMod(self, x, n, m):
+        result = 1  # Initialize result to 1
+        base = x % m  # Take x modulo m to handle cases where x >= m
+        
+        while n > 0:
+            # If n is odd, multiply the base with the result
+            if n % 2 == 1:
+                result = (result * base) % m
+            
+            # Square the base
+            base = (base * base) % m
+            
+            # Divide n by 2
+            n = n // 2
+        
+        return result
