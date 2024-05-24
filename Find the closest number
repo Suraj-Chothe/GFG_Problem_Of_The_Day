@@ -1,0 +1,39 @@
+'''Given a sorted array arr[] of positive integers. The task is to find the closest value in the array to the given number k. The array may contain duplicate values.
+Note: If the difference with k is the same for two values in the array return the greater value.'''
+
+
+
+from typing import List
+
+class Solution:
+    def findClosest(self, n: int, k: int, arr: List[int]) -> int:
+        # Initialize binary search boundaries
+        left, right = 0, n - 1
+        # Initialize the closest element as the first element
+        closest = arr[0]
+
+        while left <= right:
+            mid = (left + right) // 2
+            
+            # If the mid element is exactly k, it is the closest.
+            if arr[mid] == k:
+                return arr[mid]
+
+            # Update the closest element if needed
+            if abs(arr[mid] - k) < abs(closest - k) or (abs(arr[mid] - k) == abs(closest - k) and arr[mid] > closest):
+                closest = arr[mid]
+            
+            # Adjust the search range
+            if arr[mid] < k:
+                left = mid + 1
+            else:
+                right = mid - 1
+        
+        # Check neighbors of the closest found index to ensure correctness
+        if left < n and (abs(arr[left] - k) < abs(closest - k) or (abs(arr[left] - k) == abs(closest - k) and arr[left] > closest)):
+            closest = arr[left]
+        
+        if right >= 0 and (abs(arr[right] - k) < abs(closest - k) or (abs(arr[right] - k) == abs(closest - k) and arr[right] > closest)):
+            closest = arr[right]
+        
+        return closest
