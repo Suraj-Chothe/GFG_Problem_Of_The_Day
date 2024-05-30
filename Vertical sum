@@ -1,0 +1,85 @@
+'''
+Given a binary tree having n nodes, find the vertical sum of the nodes that are in the same vertical line.
+Return all sums through different vertical lines starting from the left-most vertical line to the right-most vertical line.
+
+Example 1:
+
+Input:
+       1
+    /  \
+  2     3
+ / \   / \
+4   5 6   7
+Output: 
+4 2 12 3 7
+Explanation:
+The tree has 5 vertical lines
+Line 1 has only one node 4 => vertical sum is 4.
+Line 2 has only one node 2 => vertical sum is 2.
+Line-3 has three nodes: 1,5,6 => vertical sum is 1+5+6 = 12.
+Line-4 has only one node 3 => vertical sum is 3.
+Line-5 has only one node 7 => vertical sum is 7.
+Example 2:
+
+Input:
+          1
+         /
+        2
+       /
+      3
+     /
+    4
+   /
+  6
+ /
+7
+Output: 
+7 6 4 3 2 1
+Explanation:
+There are six vertical lines each having one node.
+Your Task:
+You don't need to take input. Just complete the function verticalSum() that takes root node of 
+the tree as parameter and returns an array containing the vertical sum of tree from left to right.
+
+Expected Time Complexity: O(nlogn).
+Expected Auxiliary Space: O(n).
+
+Constraints:
+1<=n<=10^4
+1<= Node value <= 10^5
+
+'''
+
+class Node:
+    def _init_(self, val):
+        self.data = val
+        self.left = None
+        self.right = None
+
+class Solution:
+    # Complete the function below
+    def verticalSum(self, root):
+        if not root:
+            return []
+
+        # Dictionary to store vertical sums
+        vertical_sums = {}
+
+        # Helper function to perform depth-first traversal
+        def dfs(node, col):
+            if not node:
+                return
+            # Update the vertical sum for the current column
+            vertical_sums[col] = vertical_sums.get(col, 0) + node.data
+            # Traverse left and right subtrees with updated column indices
+            dfs(node.left, col - 1)
+            dfs(node.right, col + 1)
+
+        # Perform depth-first traversal starting from the root
+        dfs(root, 0)
+
+        # Sort the vertical sums by their column indices
+        sorted_sums = sorted(vertical_sums.items(), key=lambda x: x[0])
+
+        # Extract the vertical sums from the sorted list
+        return [sum_val for col, sum_val in sorted_sums]
