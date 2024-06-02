@@ -45,7 +45,8 @@ Output:
 ["Kevin","Kevin0@m.co","Kevin3@m.co","Kevin5@m.co"],
 ["Fern","Fern0@m.co","Fern1@m.co","Fern5@m.co"]]
 Explanation:
-We don't have any common emails in any of the users. We just sorted the emails of each person and we return a array of emails.(The details can be returned in any order).
+We don't have any common emails in any of the users. We just sorted the emails 
+of each person and we return a array of emails.(The details can be returned in any order).
 Your Task:
 You don't need to read or print anything. Your task is to complete the function accountsMerge() which takes a list of lists of strings representing accounts[][] as a parameter and returns a list of lists of strings denoting the details after merging.
 
