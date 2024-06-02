@@ -1,5 +1,4 @@
 '''
-
 Given a singly linked list having n nodes containing english alphabets ('a'-'z'). 
 Rearrange the linked list in such a way that all the vowels come before the consonants 
 while maintaining the order of their arrival. 
