@@ -1,5 +1,7 @@
 ''' 
-Given inorder and postorder traversals of a binary tree(having n nodes) in the arrays in[] and post[] respectively. The task is to construct a binary tree from these traversals.
+Given inorder and postorder traversals of a binary tree(having n nodes)
+in the arrays in[] and post[] respectively. The task is to construct a 
+binary tree from these traversals.
 
 Driver code will print the preorder traversal of the constructed tree.
 
@@ -36,7 +38,9 @@ The  resultant binary tree will be
         \     /
          5   3
 Your Task:
-You do not need to read input or print anything. Complete the function buildTree() which takes the inorder, postorder traversals and the number of nodes in the tree as input parameters and returns the root node of the newly constructed Binary Tree.
+You do not need to read input or print anything. Complete the function buildTree() 
+which takes the inorder, postorder traversals and the number of nodes in the tree 
+as input parameters and returns the root node of the newly constructed Binary Tree.
 
 Expected Time Complexity: O(n2)
 Expected Auxiliary Space: O(n)
