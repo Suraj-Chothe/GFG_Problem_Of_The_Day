@@ -1,4 +1,6 @@
-'''Given an integer array a[] of size n, find the highest element of the array. The array will either be strictly increasing or strictly increasing and then strictly decreasing.'''
+'''Given an integer array a[] of size n, find the highest element of the array.
+The array will either be strictly increasing or strictly increasing and then 
+strictly decreasing.'''
 
 
 from typing import List
