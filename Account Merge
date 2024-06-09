@@ -1,3 +1,5 @@
+
+
 '''Given a list of accounts of size n where each element accounts [ i ] is a list of strings, 
 where the first element account [ i ][ 0 ]  is a name,and the rest of the elements are emails 
 representing emails of the account.Geek wants you to merge these accounts. Two accounts belong 
